@@ -25,11 +25,6 @@
 		</require_module>
 	</require_modules>
 
-	<!-- Extensions -->
-	<extension>
-
-	</extension>
-
 	<!-- Internationalization -->
 	<!-- All message codes should start with @MODULE_ID@.* -->
 	<messages>

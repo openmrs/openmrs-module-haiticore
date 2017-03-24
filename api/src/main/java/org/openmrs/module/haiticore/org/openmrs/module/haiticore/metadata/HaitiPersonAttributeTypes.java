@@ -3,7 +3,7 @@ package org.openmrs.module.haiticore.org.openmrs.module.haiticore.metadata;
 import org.openmrs.module.emrapi.EmrApiConstants;
 import org.openmrs.module.metadatadeploy.descriptor.PersonAttributeTypeDescriptor;
 
-public class PersonAttributeTypes {
+public class HaitiPersonAttributeTypes {
 
     public static PersonAttributeTypeDescriptor TELEPHONE_NUMBER = new PersonAttributeTypeDescriptor() {
         public String uuid() { return "14d4f066-15f5-102d-96e4-000c29c2a5d7"; }

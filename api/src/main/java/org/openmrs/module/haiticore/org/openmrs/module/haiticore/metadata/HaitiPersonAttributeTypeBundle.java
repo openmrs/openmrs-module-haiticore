@@ -4,16 +4,16 @@ import org.openmrs.module.metadatadeploy.bundle.AbstractMetadataBundle;
 import org.springframework.stereotype.Component;
 
 @Component
-public class PersonAttributeTypeBundle extends AbstractMetadataBundle {
+public class HaitiPersonAttributeTypeBundle extends AbstractMetadataBundle {
 
     @Override
     public void install() throws Exception {
 
         log.info("Installing PersonAttributeTypes");
-        install(PersonAttributeTypes.TELEPHONE_NUMBER);
-        install(PersonAttributeTypes.TEST_PATIENT);
-        install(PersonAttributeTypes.UNKNOWN_PATIENT);
-        install(PersonAttributeTypes.MOTHERS_FIRST_NAME);
+        install(HaitiPersonAttributeTypes.TELEPHONE_NUMBER);
+        install(HaitiPersonAttributeTypes.TEST_PATIENT);
+        install(HaitiPersonAttributeTypes.UNKNOWN_PATIENT);
+        install(HaitiPersonAttributeTypes.MOTHERS_FIRST_NAME);
 
     }
 }

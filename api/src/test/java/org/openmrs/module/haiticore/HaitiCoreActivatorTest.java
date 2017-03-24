@@ -2,8 +2,8 @@ package org.openmrs.module.haiticore;
 
 import org.junit.Test;
 import org.openmrs.api.PersonService;
-import org.openmrs.module.haiticore.org.openmrs.module.haiticore.metadata.PersonAttributeTypeBundle;
-import org.openmrs.module.haiticore.org.openmrs.module.haiticore.metadata.PersonAttributeTypes;
+import org.openmrs.module.haiticore.org.openmrs.module.haiticore.metadata.HaitiPersonAttributeTypeBundle;
+import org.openmrs.module.haiticore.org.openmrs.module.haiticore.metadata.HaitiPersonAttributeTypes;
 import org.openmrs.module.metadatadeploy.api.MetadataDeployService;
 import org.openmrs.test.BaseModuleContextSensitiveTest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +21,7 @@ public class HaitiCoreActivatorTest extends BaseModuleContextSensitiveTest {
     private PersonService personService;
 
     @Autowired
-    private PersonAttributeTypeBundle personAttributeTypeBundle;
+    private HaitiPersonAttributeTypeBundle personAttributeTypeBundle;
 
     @Test
     public void testMetadataBundles() throws Exception {
@@ -29,7 +29,7 @@ public class HaitiCoreActivatorTest extends BaseModuleContextSensitiveTest {
 
         // just test that a few pieces of data exist
         assertThat(personService.getAllPersonAttributeTypes().size(), is(7)); // the 4 that the bundle installs + the 3 from standard test dataset
-        assertNotNull(personService.getPersonAttributeTypeByUuid(PersonAttributeTypes.MOTHERS_FIRST_NAME.uuid()));
+        assertNotNull(personService.getPersonAttributeTypeByUuid(HaitiPersonAttributeTypes.MOTHERS_FIRST_NAME.uuid()));
     }
 
 

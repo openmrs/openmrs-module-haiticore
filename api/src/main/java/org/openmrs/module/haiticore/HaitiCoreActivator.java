@@ -13,7 +13,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.openmrs.api.context.Context;
 import org.openmrs.module.BaseModuleActivator;
-import org.openmrs.module.haiticore.org.openmrs.module.haiticore.metadata.PersonAttributeTypeBundle;
+import org.openmrs.module.haiticore.org.openmrs.module.haiticore.metadata.HaitiPersonAttributeTypeBundle;
 import org.openmrs.module.metadatadeploy.api.MetadataDeployService;
 
 /**
@@ -40,7 +40,7 @@ public class HaitiCoreActivator extends BaseModuleActivator {
 
 	private void installMetadataBundles() {
 		MetadataDeployService deployService = Context.getService(MetadataDeployService.class);
-		deployService.installBundle(Context.getRegisteredComponents(PersonAttributeTypeBundle.class).get(0));
+		deployService.installBundle(Context.getRegisteredComponents(HaitiPersonAttributeTypeBundle.class).get(0));
 	}
 	
 }

@@ -9,12 +9,11 @@
 	<name>Haiti Core</name>
 	<description>Core shared functionality across shared OpenMRS implementations in Haiti</description>
 
-	<!-- TODO: figure out proper repo -->
-	<!--<scm>
+	<scm>
 		<connection>scm:git:git@github.com:openmrs/openmrs-module-haiticore.git</connection>
 		<developerConnection>scm:git:git@github.com:openmrs/openmrs-module-haiticore.git</developerConnection>
 		<url>https://github.com/openmrs/openmrs-module-haiticore/</url>
-	</scm>-->
+	</scm>
 
 	<distributionManagement>
 		<repository>

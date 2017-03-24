@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<module configVersion="1.2">
+	
+	<!-- Base Module Properties -->
+	<id>${project.parent.artifactId}</id>
+	<name>${project.parent.name}</name>
+	<version>${project.parent.version}</version>
+	<package>org.openmrs.module.haiticore</package>
+	<author>mgoodrich</author>
+	<description>
+			${project.parent.description}
+	</description>
+
+	<activator>org.openmrs.module.haiticore.HaitiCoreActivator</activator>
+	
+	<require_version>1.10.4</require_version>
+
+	<require_modules>
+		<require_module version="${metadatadeployVersion}">
+			org.openmrs.module.metadatadeploy
+		</require_module>
+		<require_module version="${emrapiVersion}">
+			org.openmrs.module.emrapi
+		</require_module>
+	</require_modules>
+
+	<!-- Extensions -->
+	<extension>
+
+	</extension>
+
+	<!-- Internationalization -->
+	<!-- All message codes should start with @MODULE_ID@.* -->
+	<messages>
+		<lang>en</lang>
+		<file>messages.properties</file>
+	</messages>
+	<messages>
+		<lang>fr</lang>
+		<file>messages_fr.properties</file>
+	</messages>
+	<messages>
+		<lang>ht</lang>
+		<file>messages_ht.properties</file>
+	</messages>
+	<!-- /Internationalization -->
+	
+</module>
+

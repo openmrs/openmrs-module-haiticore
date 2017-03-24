@@ -1,4 +1,4 @@
-${moduleName}
+Haiti Core Module
 ==========================
 
 Description

@@ -12,6 +12,7 @@
 	<packaging>jar</packaging>
 	<name>Haiti Core API</name>
 	<description>API project for Haiti Core</description>
+
 	<build>
 		<resources>
 			<resource>

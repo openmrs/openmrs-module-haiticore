@@ -105,12 +105,12 @@
 			<scope>provided</scope>
 		</dependency>
 		
-		<dependency>
+		<!--<dependency>
 			<groupId>org.openmrs.module</groupId>
 			<artifactId>emrapi-api-1.12</artifactId>
 			<version>${emrapiVersion}</version>
 			<scope>provided</scope>
-		</dependency>
+		</dependency>-->
 
 		<!-- OpenMRS modules required just to fire up application context during testing -->
 
@@ -148,7 +148,7 @@
 			<version>${serializationxstreamVersion}</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.openmrs.module</groupId>
 			<artifactId>metadatamapping-api</artifactId>

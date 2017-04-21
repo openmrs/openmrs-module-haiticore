@@ -22,7 +22,8 @@ public class HaitiCoreActivatorTest extends BaseModuleContextSensitiveTest {
 
     @Autowired
     private HaitiPersonAttributeTypeBundle personAttributeTypeBundle;
-
+  
+    
     @Test
     public void testMetadataBundles() throws Exception {
        deployService.installBundle(personAttributeTypeBundle);

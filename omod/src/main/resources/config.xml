@@ -23,6 +23,9 @@
 		<require_module version="${emrapiVersion}">
 			org.openmrs.module.emrapi
 		</require_module>
+		<require_module version="${addresshierarchyVersion}">
+			org.openmrs.module.addresshierarchy
+		</require_module>
 	</require_modules>
 
 	<!-- Internationalization -->

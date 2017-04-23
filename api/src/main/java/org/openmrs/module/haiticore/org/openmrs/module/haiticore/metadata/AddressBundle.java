@@ -1,9 +1,11 @@
 package org.openmrs.module.haiticore.org.openmrs.module.haiticore.metadata;
 
 import org.apache.commons.io.IOUtils;
+import org.apache.commons.beanutils.MethodUtils;
 import org.openmrs.api.SerializationService;
 import org.openmrs.api.context.Context;
-import org.openmrs.layout.web.address.AddressTemplate;
+import org.openmrs.api.APIException;
+import org.openmrs.module.haiticore.org.openmrs.module.haiticore.metadata.AddressComponent;
 import org.openmrs.module.addresshierarchy.AddressHierarchyLevel;
 import org.openmrs.module.addresshierarchy.service.AddressHierarchyService;
 import org.openmrs.module.addresshierarchy.util.AddressHierarchyImportUtil;
@@ -12,6 +14,8 @@ import org.openmrs.util.OpenmrsConstants;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.InputStream;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -70,8 +74,33 @@ public abstract class AddressBundle extends VersionedMetadataBundle {
     /**
      * @return a new AddressTemplate instance for the given configuration
      */
-    public AddressTemplate getAddressTemplate() {
-        AddressTemplate addressTemplate = new AddressTemplate("");
+    public Object getAddressTemplate() {
+    	Object addressTemplate = null;
+        try {
+        	Constructor constructor = Context.loadClass("org.openmrs.layout.web.address.AddressTemplate").getConstructor(String.class);
+			addressTemplate = constructor.newInstance("");
+        }
+        /* Multi-catch exceptions were added to Java 1.7. We need to do a work-around to keep compatibility for 1.6
+    	Ideal Multi-catch would be catch (ClassNotFoundException | InstantiationException | IllegalAccessException | NoSuchMethodException | InvocationTargetException e) 
+    	*/
+		catch (Exception e){
+			if(e instanceof ClassNotFoundException || e instanceof InstantiationException || e instanceof IllegalAccessException || e instanceof NoSuchMethodException || e instanceof InvocationTargetException) {
+				
+        	try {
+        		Constructor constructor = Context.loadClass("org.openmrs.layout.address.AddressTemplate").getConstructor(String.class);
+        		addressTemplate = constructor.newInstance("");
+				}
+	        	/* Multi-catch exceptions were added to Java 1.7. We need to do a work-around to keep compatibility for 1.6
+	        	Ideal Multi-catch would be catch (ClassNotFoundException | InstantiationException | IllegalAccessException | NoSuchMethodException | InvocationTargetException ex) 
+	        	*/
+				catch (Exception ex){
+					if(ex instanceof ClassNotFoundException || ex instanceof InstantiationException || ex instanceof IllegalAccessException || ex instanceof NoSuchMethodException || ex instanceof InvocationTargetException) {
+						throw new APIException("Error while getting address template", ex);
+					}
+				}
+			}
+        }
+        
         Map<String, String> nameMappings = new HashMap<String, String>();
         Map<String, String> sizeMappings = new HashMap<String, String>();
         Map<String, String> elementDefaults = new HashMap<String, String>();
@@ -82,10 +111,22 @@ public abstract class AddressBundle extends VersionedMetadataBundle {
                 elementDefaults.put(c.getField().getName(), c.getElementDefault());
             }
         }
-        addressTemplate.setNameMappings(nameMappings);
-        addressTemplate.setSizeMappings(sizeMappings);
-        addressTemplate.setElementDefaults(elementDefaults);
-        addressTemplate.setLineByLineFormat(getLineByLineFormat());
+       
+        try {
+			MethodUtils.invokeExactMethod(addressTemplate, "setNameMappings", new Object[]{ nameMappings }, new Class[] { Map.class });
+			MethodUtils.invokeExactMethod(addressTemplate, "setSizeMappings", new Object[]{ sizeMappings }, new Class[] { Map.class });
+	        MethodUtils.invokeExactMethod(addressTemplate, "setElementDefaults", new Object[]{ elementDefaults }, new Class[] { Map.class });
+	        MethodUtils.invokeExactMethod(addressTemplate, "setLineByLineFormat", new Object[]{ getLineByLineFormat() }, new Class[] { List.class });
+		}
+        /* Multi-catch exceptions were added to Java 1.7. We need to do a work-around to keep compatibility for 1.6
+        	Ideal Multi-catch would be catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e)
+        */
+		catch (Exception e) {
+			if (e instanceof NoSuchMethodException || e instanceof IllegalAccessException || e instanceof InvocationTargetException){
+				throw new APIException("Error while getting address template", e);
+			}
+		}
+        
         return addressTemplate;
     }
 

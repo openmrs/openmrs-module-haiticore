@@ -38,6 +38,6 @@ public class HaitiAddressBundle extends AddressBundle {
 
     @Override
     public String getAddressHierarchyEntryPath() {
-        return "addresshierarchy/haiti_address_hierarchy_entries_9.csv";
+        return "addresshierarchy/haiti_address_hierarchy_entries_10.csv";
     }
 }

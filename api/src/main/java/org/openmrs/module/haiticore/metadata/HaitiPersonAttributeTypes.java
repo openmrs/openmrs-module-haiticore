@@ -1,4 +1,4 @@
-package org.openmrs.module.haiticore.org.openmrs.module.haiticore.metadata;
+package org.openmrs.module.haiticore.metadata;
 
 import org.openmrs.module.emrapi.EmrApiConstants;
 import org.openmrs.module.metadatadeploy.descriptor.PersonAttributeTypeDescriptor;

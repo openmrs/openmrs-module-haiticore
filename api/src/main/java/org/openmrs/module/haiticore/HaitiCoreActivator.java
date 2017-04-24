@@ -13,9 +13,9 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.openmrs.api.context.Context;
 import org.openmrs.module.BaseModuleActivator;
-import org.openmrs.module.haiticore.org.openmrs.module.haiticore.metadata.HaitiPersonAttributeTypeBundle;
-import org.openmrs.module.haiticore.org.openmrs.module.haiticore.metadata.HaitiEncounterTypeBundle;
-import org.openmrs.module.haiticore.org.openmrs.module.haiticore.metadata.HaitiAddressBundle;
+import org.openmrs.module.haiticore.metadata.HaitiPersonAttributeTypeBundle;
+import org.openmrs.module.haiticore.metadata.HaitiEncounterTypeBundle;
+import org.openmrs.module.haiticore.metadata.HaitiAddressBundle;
 import org.openmrs.module.metadatadeploy.api.MetadataDeployService;
 
 /**

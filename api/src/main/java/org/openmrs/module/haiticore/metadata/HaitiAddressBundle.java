@@ -1,8 +1,6 @@
-package org.openmrs.module.haiticore.org.openmrs.module.haiticore.metadata;
+package org.openmrs.module.haiticore.metadata;
 
 import org.openmrs.module.addresshierarchy.AddressField;
-import org.openmrs.module.haiticore.org.openmrs.module.haiticore.metadata.AddressBundle;
-import org.openmrs.module.haiticore.org.openmrs.module.haiticore.metadata.AddressComponent;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -13,7 +11,7 @@ public class HaitiAddressBundle extends AddressBundle {
 
     @Override
     public int getVersion() {
-        return 9;
+        return 10;
     }
 
     @Override

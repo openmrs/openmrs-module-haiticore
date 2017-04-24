@@ -1,11 +1,10 @@
-package org.openmrs.module.haiticore.org.openmrs.module.haiticore.metadata;
+package org.openmrs.module.haiticore.metadata;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.beanutils.MethodUtils;
 import org.openmrs.api.SerializationService;
 import org.openmrs.api.context.Context;
 import org.openmrs.api.APIException;
-import org.openmrs.module.haiticore.org.openmrs.module.haiticore.metadata.AddressComponent;
 import org.openmrs.module.addresshierarchy.AddressHierarchyLevel;
 import org.openmrs.module.addresshierarchy.service.AddressHierarchyService;
 import org.openmrs.module.addresshierarchy.util.AddressHierarchyImportUtil;

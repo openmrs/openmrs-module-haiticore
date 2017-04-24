@@ -34,7 +34,7 @@
 	</modules>
 
 	<properties>
-		<openMRSVersion>2.0.5</openMRSVersion>
+		<openMRSVersion>1.10.4</openMRSVersion>
 		<metadatadeployVersion>1.8.1</metadatadeployVersion>
 		<addresshierarchyVersion>2.10</addresshierarchyVersion>
 		<emrapiVersion>1.21.0</emrapiVersion>
@@ -120,14 +120,6 @@
             <scope>provided</scope>
         </dependency>
 
-<!-- Comment me out -->
-		<dependency>
-			<groupId>org.openmrs.module</groupId>
-			<artifactId>emrapi-api-1.12</artifactId>
-			<version>${emrapiVersion}</version>
-			<scope>provided</scope>
-		</dependency>
-
 		<!-- OpenMRS modules required just to fire up application context during testing -->
 
 		<dependency>
@@ -169,14 +161,6 @@
 			<groupId>org.openmrs.module</groupId>
 			<artifactId>metadatasharing-api</artifactId>
 			<version>${metadatasharingVersion}</version>
-			<scope>test</scope>
-		</dependency>
-
-<!-- Comment me out -->
-		<dependency>
-			<groupId>org.openmrs.module</groupId>
-			<artifactId>serialization.xstream-api-2.0</artifactId>
-			<version>${serializationxstreamVersion}</version>
 			<scope>test</scope>
 		</dependency>
 

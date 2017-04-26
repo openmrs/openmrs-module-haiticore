@@ -1,31 +1,29 @@
 package org.openmrs.module.haiticore;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.openmrs.api.PersonService;
 import org.openmrs.api.context.Context;
 import org.openmrs.module.addresshierarchy.AddressField;
 import org.openmrs.module.addresshierarchy.AddressHierarchyLevel;
 import org.openmrs.module.addresshierarchy.service.AddressHierarchyService;
+import org.openmrs.module.haiticore.metadata.HaitiAddressBundle;
 import org.openmrs.module.haiticore.metadata.HaitiPersonAttributeTypeBundle;
 import org.openmrs.module.haiticore.metadata.HaitiPersonAttributeTypes;
-import org.openmrs.module.haiticore.metadata.HaitiAddressBundle;
-import org.openmrs.module.metadatadeploy.api.MetadataDeployService;
 import org.openmrs.test.BaseModuleContextSensitiveTest;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.List;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
-import java.util.List;
-
-import org.junit.Assert;
-
 public class HaitiCoreActivatorTest extends BaseModuleContextSensitiveTest {
 
     @Autowired
-    private MetadataDeployService deployService;
+    private HaitiCoreInstaller haitiCoreInstaller;
 
     @Autowired
     private PersonService personService;
@@ -38,8 +36,8 @@ public class HaitiCoreActivatorTest extends BaseModuleContextSensitiveTest {
 
     @Test
     public void testMetadataBundles() throws Exception {
-       deployService.installBundle(personAttributeTypeBundle);
-       deployService.installBundle(addressBundle);
+
+        haitiCoreInstaller.installAllMetadataBundles();
 
         // just test that a few pieces of data exist
         assertThat(personService.getAllPersonAttributeTypes().size(), is(7)); // the 4 that the bundle installs + the 3 from standard test dataset

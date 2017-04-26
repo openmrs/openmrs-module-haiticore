@@ -73,6 +73,10 @@ public abstract class AddressBundle extends VersionedMetadataBundle {
     /**
      * @return a new AddressTemplate instance for the given configuration
      */
+    /* This Object utilizes the reflection method to identify the correct constructing class because the API
+     * for address template changed from "org.openmrs.layout.web.address.AddressTemplate" prior to OpenMRS platform v1.12
+     * and "org.openmrs.layout.address.AddressTemplate" thereafter.
+     */
     public Object getAddressTemplate() {
     	Object addressTemplate = null;
         try {

@@ -11,12 +11,7 @@ package org.openmrs.module.haiticore;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.openmrs.api.context.Context;
 import org.openmrs.module.BaseModuleActivator;
-import org.openmrs.module.haiticore.metadata.HaitiPersonAttributeTypeBundle;
-import org.openmrs.module.haiticore.metadata.HaitiEncounterTypeBundle;
-import org.openmrs.module.haiticore.metadata.HaitiAddressBundle;
-import org.openmrs.module.metadatadeploy.api.MetadataDeployService;
 
 /**
  * This class contains the logic that is run every time this module is either started or shutdown
@@ -30,7 +25,6 @@ public class HaitiCoreActivator extends BaseModuleActivator {
 	 */
 	public void started() {
 		log.info("Started Haiti Core");
-		installMetadataBundles();
 	}
 	
 	/**
@@ -40,11 +34,4 @@ public class HaitiCoreActivator extends BaseModuleActivator {
 		log.info("Shutdown Haiti Core");
 	}
 
-	private void installMetadataBundles() {
-		MetadataDeployService deployService = Context.getService(MetadataDeployService.class);
-		deployService.installBundle(Context.getRegisteredComponents(HaitiPersonAttributeTypeBundle.class).get(0));
-		deployService.installBundle(Context.getRegisteredComponents(HaitiEncounterTypeBundle.class).get(0));
-		deployService.installBundle(Context.getRegisteredComponents(HaitiAddressBundle.class).get(0));
-	}
-	
 }

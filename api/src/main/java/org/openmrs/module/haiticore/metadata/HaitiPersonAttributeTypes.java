@@ -34,4 +34,11 @@ public class HaitiPersonAttributeTypes {
         public double sortWeight() { return 14; }
     };
 
+    public static PersonAttributeTypeDescriptor PROVIDER_IDENTIFIER = new PersonAttributeTypeDescriptor() {
+		public String uuid() { return "6de6c415-97a2-4cca-817a-9501cd9ef382"; }
+		public String name() { return "Provider Identifier"; }
+		public String description() { return "Identifier used to uniquely identify providers across the health system"; }
+		public boolean searchable() { return true; }
+		public double sortWeight() { return 12; }
+	};
 }

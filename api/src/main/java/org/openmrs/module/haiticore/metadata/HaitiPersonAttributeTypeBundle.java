@@ -14,6 +14,7 @@ public class HaitiPersonAttributeTypeBundle extends AbstractMetadataBundle {
         install(HaitiPersonAttributeTypes.TEST_PATIENT);
         install(HaitiPersonAttributeTypes.UNKNOWN_PATIENT);
         install(HaitiPersonAttributeTypes.MOTHERS_FIRST_NAME);
+        install(HaitiPersonAttributeTypes.PROVIDER_IDENTIFIER);
 
     }
 }

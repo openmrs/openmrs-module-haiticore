@@ -40,7 +40,7 @@ public class HaitiCoreActivatorTest extends BaseModuleContextSensitiveTest {
         haitiCoreInstaller.installAllMetadataBundles();
 
         // just test that a few pieces of data exist
-        assertThat(personService.getAllPersonAttributeTypes().size(), is(7)); // the 4 that the bundle installs + the 3 from standard test dataset
+        assertThat(personService.getAllPersonAttributeTypes().size(), is(8)); // the 5 that the bundle installs + the 3 from standard test dataset
         assertNotNull(personService.getPersonAttributeTypeByUuid(HaitiPersonAttributeTypes.MOTHERS_FIRST_NAME.uuid()));
     
         // test the address hierarchy

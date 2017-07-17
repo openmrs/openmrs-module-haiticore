@@ -27,4 +27,10 @@ public class HaitiPatientIdentifierTypes {
 		public String description() { return "Code referencing a patient's record in an external biometrics system"; }
 	};
 
+	public static PatientIdentifierTypeDescriptor SEDISH_MPI_ECID = new PatientIdentifierTypeDescriptor() {
+		public String uuid() { return "f54ed6b9-f5b9-4fd5-a588-8f7561a78401"; }
+		public String name() { return "ECID"; }
+		public String description() { return "Code referencing a patient's record in the SEDISH Master Person Index (Enterprise Client ID)"; }
+	};
+
 }

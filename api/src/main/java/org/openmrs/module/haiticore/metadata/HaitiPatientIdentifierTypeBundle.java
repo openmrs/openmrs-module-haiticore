@@ -13,6 +13,7 @@ public class HaitiPatientIdentifierTypeBundle extends AbstractMetadataBundle {
         log.info("Installing PatientIdentifierTypes");
 
         install(HaitiPatientIdentifierTypes.BIOMETRIC_REF_NUMBER);
+        install(HaitiPatientIdentifierTypes.SEDISH_MPI_ECID);
     }
 
 }

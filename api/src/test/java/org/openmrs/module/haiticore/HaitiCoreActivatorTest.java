@@ -3,6 +3,7 @@ package org.openmrs.module.haiticore;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openmrs.api.PersonService;
+import org.openmrs.api.PatientService;
 import org.openmrs.api.context.Context;
 import org.openmrs.module.addresshierarchy.AddressField;
 import org.openmrs.module.addresshierarchy.AddressHierarchyLevel;
@@ -10,6 +11,8 @@ import org.openmrs.module.addresshierarchy.service.AddressHierarchyService;
 import org.openmrs.module.haiticore.metadata.HaitiAddressBundle;
 import org.openmrs.module.haiticore.metadata.HaitiPersonAttributeTypeBundle;
 import org.openmrs.module.haiticore.metadata.HaitiPersonAttributeTypes;
+import org.openmrs.module.haiticore.metadata.HaitiPatientIdentifierTypes;
+
 import org.openmrs.test.BaseModuleContextSensitiveTest;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -27,13 +30,16 @@ public class HaitiCoreActivatorTest extends BaseModuleContextSensitiveTest {
 
     @Autowired
     private PersonService personService;
+    
+    @Autowired
+    private PatientService patientService;
 
     @Autowired
     private HaitiPersonAttributeTypeBundle personAttributeTypeBundle;
 
     @Autowired
     private HaitiAddressBundle addressBundle;
-
+    
     @Test
     public void testMetadataBundles() throws Exception {
 
@@ -43,6 +49,9 @@ public class HaitiCoreActivatorTest extends BaseModuleContextSensitiveTest {
         assertThat(personService.getAllPersonAttributeTypes().size(), is(7)); // the 4 that the bundle installs + the 3 from standard test dataset
         assertNotNull(personService.getPersonAttributeTypeByUuid(HaitiPersonAttributeTypes.MOTHERS_FIRST_NAME.uuid()));
     
+        // test the patient identifier type is loaded
+        assertNotNull(patientService.getPatientIdentifierTypeByUuid(HaitiPatientIdentifierTypes.BIOMETRIC_REF_NUMBER.uuid()));
+        
         // test the address hierarchy
         verifyAddressHierarchyLevelsCreated();
         verifyAddressHierarchyLoaded();

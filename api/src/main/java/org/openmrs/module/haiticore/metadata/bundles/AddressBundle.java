@@ -1,4 +1,4 @@
-package org.openmrs.module.haiticore.metadata;
+package org.openmrs.module.haiticore.metadata.bundles;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.beanutils.MethodUtils;
@@ -8,6 +8,7 @@ import org.openmrs.api.APIException;
 import org.openmrs.module.addresshierarchy.AddressHierarchyLevel;
 import org.openmrs.module.addresshierarchy.service.AddressHierarchyService;
 import org.openmrs.module.addresshierarchy.util.AddressHierarchyImportUtil;
+import org.openmrs.module.haiticore.metadata.AddressComponent;
 import org.openmrs.module.metadatadeploy.bundle.VersionedMetadataBundle;
 import org.openmrs.util.OpenmrsConstants;
 import org.springframework.beans.factory.annotation.Autowired;

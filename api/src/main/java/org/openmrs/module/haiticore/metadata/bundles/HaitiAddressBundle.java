@@ -1,6 +1,7 @@
-package org.openmrs.module.haiticore.metadata;
+package org.openmrs.module.haiticore.metadata.bundles;
 
 import org.openmrs.module.addresshierarchy.AddressField;
+import org.openmrs.module.haiticore.metadata.AddressComponent;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;

@@ -8,8 +8,8 @@ import org.openmrs.api.context.Context;
 import org.openmrs.module.addresshierarchy.AddressField;
 import org.openmrs.module.addresshierarchy.AddressHierarchyLevel;
 import org.openmrs.module.addresshierarchy.service.AddressHierarchyService;
-import org.openmrs.module.haiticore.metadata.HaitiAddressBundle;
-import org.openmrs.module.haiticore.metadata.HaitiPersonAttributeTypeBundle;
+import org.openmrs.module.haiticore.metadata.bundles.HaitiAddressBundle;
+import org.openmrs.module.haiticore.metadata.bundles.HaitiPersonAttributeTypeBundle;
 import org.openmrs.module.haiticore.metadata.HaitiPersonAttributeTypes;
 import org.openmrs.module.haiticore.metadata.HaitiPatientIdentifierTypes;
 

@@ -1,4 +1,4 @@
-package org.openmrs.module.haiticore.metadata.patientidentifiertypebundles;
+package org.openmrs.module.haiticore.metadata.bundles;
 
 import org.openmrs.module.metadatadeploy.bundle.AbstractMetadataBundle;
 import org.openmrs.module.haiticore.metadata.HaitiPatientIdentifierTypes;

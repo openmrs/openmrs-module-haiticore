@@ -1,5 +1,6 @@
-package org.openmrs.module.haiticore.metadata;
+package org.openmrs.module.haiticore.metadata.bundles;
 
+import org.openmrs.module.haiticore.metadata.HaitiEncounterTypes;
 import org.openmrs.module.metadatadeploy.bundle.AbstractMetadataBundle;
 import org.springframework.stereotype.Component;
 

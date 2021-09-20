@@ -19,7 +19,7 @@
 		<repository>
 			<id>openmrs-repo-modules</id>
 			<name>Modules</name>
-			<url></url>https://openmrs.jfrog.io/artifactory/modules/</url>
+			<url>https://openmrs.jfrog.io/artifactory/modules/</url>
 		</repository>
 		<snapshotRepository>
 			<id>openmrs-repo-snapshots</id>
